@@ -1,0 +1,7 @@
+# render.yaml - Render 배포 설정
+services:
+  - type: web
+    name: udid-collector
+    runtime: docker
+    plan: free
+    healthCheckPath: /
