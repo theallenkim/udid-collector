@@ -1,54 +1,9 @@
 <?php
-$host = $_SERVER['HTTP_HOST'];
-$scheme = 'https';
-
 if (isset($_GET['download'])) {
-    $uuid = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-        mt_rand(0, 0xffff), mt_rand(0, 0xffff),
-        mt_rand(0, 0xffff),
-        mt_rand(0, 0x0fff) | 0x4000,
-        mt_rand(0, 0x3fff) | 0x8000,
-        mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
-    );
-    
-    $mobileconfig = <<<XML
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>PayloadContent</key>
-    <dict>
-        <key>URL</key>
-        <string>{$scheme}://{$host}/receive.php</string>
-        <key>DeviceAttributes</key>
-        <array>
-            <string>UDID</string>
-            <string>PRODUCT</string>
-            <string>VERSION</string>
-            <string>SERIAL</string>
-        </array>
-    </dict>
-    <key>PayloadOrganization</key>
-    <string>UDID Collector</string>
-    <key>PayloadDisplayName</key>
-    <string>UDID 확인</string>
-    <key>PayloadDescription</key>
-    <string>기기 정보 확인 후 자동 삭제됩니다.</string>
-    <key>PayloadVersion</key>
-    <integer>1</integer>
-    <key>PayloadUUID</key>
-    <string>{$uuid}</string>
-    <key>PayloadIdentifier</key>
-    <string>io.udid.collector.{$uuid}</string>
-    <key>PayloadType</key>
-    <string>Profile Service</string>
-</dict>
-</plist>
-XML;
-    
+    $file = __DIR__ . '/signed.mobileconfig';
     header('Content-Type: application/x-apple-aspen-config');
     header('Content-Disposition: attachment; filename="udid.mobileconfig"');
-    echo $mobileconfig;
+    readfile($file);
     exit;
 }
 ?>
@@ -115,7 +70,6 @@ XML;
                 <li>위 버튼 탭</li>
                 <li>"허용" 선택</li>
                 <li>설정 앱 → 프로파일 다운로드됨 → 설치</li>
-                <li>"서명되지 않음" 경고 → 설치</li>
                 <li>UDID 복사해서 전달</li>
             </ol>
         </div>
