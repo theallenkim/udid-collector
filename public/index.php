@@ -61,7 +61,7 @@ if (isset($_GET['download'])) {
 <body>
     <div class="container">
         <h1>📱 UDID 확인</h1>
-        <p>2026/01/05 23:44:30 iPhone/iPad UDID를 확인합니다.<br>Safari에서만 작동합니다.</p>
+        <p>2026/01/06 00:00:30 iPhone/iPad UDID를 확인합니다.<br>Safari에서만 작동합니다.</p>
         <a href="?download=1" class="btn">UDID 확인하기</a>
         <div class="steps">
             <h3>진행 순서</h3>
