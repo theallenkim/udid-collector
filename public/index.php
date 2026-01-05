@@ -45,7 +45,6 @@ if (isset($_GET['download'])) {
             font-size: 17px;
             font-weight: 600;
         }
-        .btn:hover { background: #0056b3; }
         .steps {
             margin-top: 30px;
             text-align: left;
