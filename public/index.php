@@ -1,4 +1,4 @@
-\<?php
+<?php
 if (isset($_GET['download'])) {
     $file = __DIR__ . '/signed.mobileconfig';
     header('Content-Type: application/x-apple-aspen-config');
