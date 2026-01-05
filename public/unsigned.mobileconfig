@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <dict>
+        <key>URL</key>
+        <string>https://udid-collector-ar3f.onrender.com/receive.php</string>
+        <key>DeviceAttributes</key>
+        <array>
+            <string>UDID</string>
+            <string>PRODUCT</string>
+            <string>VERSION</string>
+            <string>SERIAL</string>
+        </array>
+    </dict>
+    <key>PayloadOrganization</key>
+    <string>MakeBuildLabs</string>
+    <key>PayloadDisplayName</key>
+    <string>UDID 확인</string>
+    <key>PayloadDescription</key>
+    <string>기기 정보 확인 후 자동 삭제됩니다.</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadUUID</key>
+    <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+    <key>PayloadIdentifier</key>
+    <string>com.makebuildlabs.udid</string>
+    <key>PayloadType</key>
+    <string>Profile Service</string>
+</dict>
+</plist>
